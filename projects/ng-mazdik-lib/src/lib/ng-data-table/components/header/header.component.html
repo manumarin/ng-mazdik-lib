@@ -1,0 +1,22 @@
+<ng-template #headerTemplateView
+  *ngIf="headerTemplate && headerTemplate.template"
+  [ngTemplateOutlet]="headerTemplate.template">
+</ng-template>
+
+<div #headerRow class="datatable-header-row">
+
+  <dt-header-cell
+    *ngFor="let column of table.preparedColumns; trackBy: columnTrackingFn"
+    [ngClass]="column.headerCellClass"
+    [table]="table"
+    [column]="column"
+    appResizable
+    [east]="column.resizeable"
+    [ghost]="true"
+    (resizeBegin)="onResizeBegin()"
+    (resizing)="onResize($event, column)"
+    (resizeEnd)="onResizeEnd($event, column)">
+  </dt-header-cell>
+
+</div>
+

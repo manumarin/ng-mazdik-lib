@@ -1,0 +1,16 @@
+<app-data-table [table]="treeTable"></app-data-table>
+
+<ng-template #cellTemplate let-row="row" let-value="value">
+    <div class="datatable-tree-node"
+        [style.padding-left.px]="paddingIndent(row)"
+        style="cursor: pointer;">
+    <i [class]="getExpanderIcon(row.node)"
+        (click)="onExpand(row.node)">
+    </i>
+    <span class="datatable-tree-node-content"
+        (dblclick)="onExpand(row.node)">
+        <i *ngIf="row.node.icon || treeTable.getIconFunc" [ngClass]="getIcon(row.node)"></i>
+        {{row.node.name}}
+    </span>
+    </div>
+</ng-template>

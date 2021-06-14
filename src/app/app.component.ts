@@ -11,7 +11,7 @@ export class AppComponent implements AfterViewInit {
   navbarExpand = false;
   state: string;
   navMenuNodes: any[];
-  link = 'https://github.com/mazdik/ng-mazdik';
+  link = 'https://github.com/manumarin/ng-mazdik-lib';
 
   @ViewChild(NavMenuComponent, { static: false }) navMenu: NavMenuComponent;
 

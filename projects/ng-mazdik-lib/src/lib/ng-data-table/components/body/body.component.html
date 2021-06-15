@@ -11,7 +11,7 @@
     <div class="datatable-body-row datatable-group-header" role="row"
       *ngIf="table.rowGroup.isRowGroup(row)"
       [style.height.px]="table.dimensions.rowHeight"
-      [style.width.px]="table.dimensions.columnsTotalWidth">
+      [style.width.px]="table.dimensions.columnsTotalWidth" style="background-color: yellowgreen;">
         <div class="datatable-body-cell dt-sticky" style="left: 0;" *ngIf="!rowGroupTemplate">
           {{table.rowGroup.getRowGroupName(row)}} ({{table.rowGroup.getRowGroupSize(row)}})
         </div>
